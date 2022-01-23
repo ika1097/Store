@@ -41,12 +41,11 @@ public class Appliances extends Product {
 
     @Override
     public double getDiscount() {
-        double discount = 1;
         if (this.price > 999) {
             int today = LocalDate.now().getDayOfWeek().getValue();
-            discount = today > 5 ? 0.05 : 1;
+            return today > 5 ? 0.05 : 1;
         }
-        return discount;
+        return 1;
     }
 
     @Override
