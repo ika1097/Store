@@ -3,6 +3,7 @@ package cashier;
 import cart.Cart;
 import product.Product;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -29,9 +30,11 @@ public class Cashier {
                 System.out.printf("#discount %.0f%% -$%.2f\n", p.getDiscount() * 100, discount);
             System.out.println();
         }
-        System.out.printf("------------------------------------\n" +
-                "SUBTOTAL: $%.2f\n" +
-                "DISCOUNT: $%.2f\n\n" +
-                "TOTAL: $%.2f", subtotal, sumDiscount, subtotal - sumDiscount);
+        System.out.printf("""
+                ------------------------------
+                SUBTOTAL: $%.2f
+                DISCOUNT: $%.2f
+
+                TOTAL: $%.2f""", subtotal, sumDiscount, subtotal - sumDiscount);
     }
 }

@@ -5,10 +5,10 @@ import product.Product;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Cart<T extends Product> {
-    private Map<T, Double> products = new HashMap<>();
+public class Cart {
+    private Map<Product, Double> products = new HashMap<>();
 
-    public void addProduct(T product, Double quantity) {
+    public void addProduct(Product product, Double quantity) {
 
         this.products.put(product, quantity);
     }
@@ -17,7 +17,7 @@ public class Cart<T extends Product> {
         this.products.remove(product);
     }
 
-    public Map<T, Double> getProducts() {
+    public Map<Product, Double> getProducts() {
         return this.products;
     }
 }

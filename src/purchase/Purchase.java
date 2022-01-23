@@ -14,7 +14,7 @@ import static enumetarion.Size.M;
 
 public class Purchase {
 
-    public static void purchaseInitialization(){
+    public static void purchaseInitialization() {
         Cashier cashier = new Cashier();
 
         Food food = new Food("apples", "BrandA", 1.5, LocalDate.parse("2021-06-14"));

@@ -2,7 +2,7 @@ package product;
 
 import java.time.LocalDate;
 
-public class Beverage extends Product {
+public class Beverage extends Product implements CalculateDiscount{
 
 
     private LocalDate expirationDates;
@@ -22,14 +22,7 @@ public class Beverage extends Product {
 
     @Override
     public double getDiscount() {
-        double discount = 1;
-        LocalDate today = LocalDate.now();
-        if ((this.expirationDates.minusDays(5).compareTo(today) < 0)) {
-            discount = 0.1;
-        } else if ((this.expirationDates.compareTo(today) == 0)) {
-            discount = 0.5;
-        }
-        return discount;
+        return calculateDiscount(this.expirationDates);
     }
 
     @Override

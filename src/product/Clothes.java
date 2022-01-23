@@ -34,8 +34,7 @@ public class Clothes extends Product {
     @Override
     public double getDiscount() {
         int today = LocalDate.now().getDayOfWeek().getValue();
-        double discount = today < 6 ? 1 : 0.1;
-        return discount;
+        return today < 6 ? 0.1 : 1;
     }
 
     @Override
